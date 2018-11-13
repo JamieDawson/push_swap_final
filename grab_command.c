@@ -6,29 +6,11 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:27:08 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 11:51:09 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 14:25:03 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_header.h"
-
-void	dup_check_ps(t_nums *head, int nbr)
-{
-	int i;
-
-	i = 0;
-	while (head)
-	{
-		if (head->num == nbr)
-			i++;
-		head = head->next;
-	}
-	if (i >= 2)
-	{
-		ft_putstr("\33[31mError\033[0m\n");
-		exit(1);
-	}
-}
 
 /*
 //TESTING REMOVE LATER!
@@ -42,6 +24,25 @@ void	print_list(t_nums *nums)
 	}
 }
 */
+
+void	dup_check_ps(t_nums *head, int nbr, t_nums **a)
+{
+	int i;
+
+	i = 0;
+	while (head)
+	{
+		if (head->num == nbr)
+			i++;
+		head = head->next;
+	}
+	if (i >= 2)
+	{
+		ft_putstr("\33[31mError\033[0m\n");
+		free_here(a);
+		exit(1);
+	}
+}
 
 void	dup_check_c(t_nums *head, int nbr, t_nums **a)
 {

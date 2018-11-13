@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:36:53 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 12:50:23 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 14:24:51 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,15 @@ typedef struct	s_nums{
 }				t_nums;
 
 
-void			above_int_max(long long nbr);//free a here
-long long		ft_atoi_digit_confirm(const char *str);//free a
-
-//dealing with checker here
+void			above_int_max(long long nbr, t_nums **a);//free a here
+long long		ft_atoi_digit_confirm(const char *str, t_nums **a);//free a
 void			above_int_max_c(long long nbr, t_nums **a);//DONE
 long long		ft_atoi_digit_confirm_c(const char *str, t_nums **a);//DONE
 int				is_space(char c);
-void			dup_check_ps(t_nums *head, int nbr);//free a
-void			dup_check_c(t_nums *head, int nbr, t_nums **a);//done
-t_nums			*create_a_list_ps(int argc, char **argv);
-t_nums			*create_a_list_c(int argc, char **argv, t_nums **a);//dup done
-
-
-
+void			dup_check_ps(t_nums *head, int nbr, t_nums **a);//DONE
+void			dup_check_c(t_nums *head, int nbr, t_nums **a);//DONE
+t_nums			*create_a_list_ps(int argc, char **argv, t_nums **a);//max aboe
+t_nums			*create_a_list_c(int argc, char **argv, t_nums **a);//DONE
 void			confirm_digit(int argc, char **argv);
 void			free_here(t_nums **all);
 int				before_push_b(t_nums **a, t_nums **b);

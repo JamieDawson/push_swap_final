@@ -6,62 +6,11 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:23 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 12:46:22 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 14:25:01 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_header.h"
-
-/*
-//MOVING TO confirming_digits.c
-long long		ft_atoi_digit_confirm(const char *str)
-{
-	long long	i;
-	long long	nbr;
-	int			negative;
-
-	nbr = 0;
-	negative = 1;
-	i = 0;
-	while (is_space(str[i]))
-		i++;
-	if (str[i] == '-')
-		negative = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while ((str[i] >= '0') && (str[i] <= '9'))
-	{
-		nbr = (nbr * 10) + (str[i] - '0');
-		i++;
-	}
-	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
-	{
-		ft_putstr("\033[31mError\033[0m\n");
-		exit(1);
-	}
-	above_int_max(nbr * negative);
-	return (nbr * negative);
-}
-
-void			above_int_max(long long nbr)
-{
-	long long int i;
-	long long int small;
-
-	i = 1;
-	small = -2147483648;
-	if (nbr > 2147483647)
-	{
-		ft_putstr("\33[31mError\033[0m\n");
-		exit(1);
-	}
-	if (nbr < small)
-	{
-		ft_putstr("\033[31mError\033[0m\n");
-		exit(1);
-	}
-}
-*/
 
 t_nums			*create_a_list_c(int argc, char **argv, t_nums **a)
 {

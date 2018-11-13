@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/24 20:54:25 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 12:47:50 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 14:24:54 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,24 +81,7 @@ long long		ft_atoi_digit_confirm_c(const char *str, t_nums **a)//DONE
 	return (nbr * negative);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void			above_int_max(long long nbr)
+void			above_int_max(long long nbr, t_nums **a) //HANDLE FOR PS
 {
 	long long int i;
 	long long int small;
@@ -108,16 +91,18 @@ void			above_int_max(long long nbr)
 	if (nbr > 2147483647)
 	{
 		ft_putstr("\33[31mError\033[0m\n");
+		free_here(a);
 		exit(1);
 	}
 	if (nbr < small)
 	{
 		ft_putstr("\33[31mError\033[0m\n");
+		free_here(a);
 		exit(1);
 	}
 }
 
-long long		ft_atoi_digit_confirm(const char *str)
+long long		ft_atoi_digit_confirm(const char *str, t_nums **a) //HANDLE FOR PS
 {
 	long long	i;
 	long long	nbr;
@@ -140,9 +125,10 @@ long long		ft_atoi_digit_confirm(const char *str)
 	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
 	{
 		ft_putstr("\033[31mError\033[0m\n");
+		free_here(a);
 		exit(1);
 	}
-	above_int_max(nbr * negative);
+	above_int_max(nbr * negative, a);
 	return (nbr * negative);
 }
 
