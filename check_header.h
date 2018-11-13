@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:36:53 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 23:03:54 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 11:53:20 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ typedef struct	s_nums{
 	long			num;
 	struct s_nums	*next;
 }				t_nums;
+
+
+void			above_int_max(long long nbr);//free a here
+void			confirm_digit(int argc, char **argv);
+long long		ft_atoi_digit_confirm(const char *str);//free a
+int				is_space(char c);
+void			dup_check_ps(t_nums *head, int nbr);//free a
+void			dup_check_c(t_nums *head, int nbr, t_nums **a);//done
+t_nums			*create_a_list_ps(int argc, char **argv);
+t_nums			*create_a_list_c(int argc, char **argv, t_nums **a);//dup done
 
 void			free_here(t_nums **all);
 int				before_push_b(t_nums **a, t_nums **b);
@@ -76,13 +86,6 @@ int				sort_three(t_nums **a);
 void			write_ok(void);
 int				min_finder(t_nums *a, int min);
 int				my_insert_sort(t_nums **a, t_nums **b, int i);
-t_nums			*create_a_list(int argc, char **argv);
-t_nums			*create_a_list_n(int argc, char **argv);
-void			above_int_max(long long nbr);
-void			confirm_digit(int argc, char **argv);
-long long		ft_atoi_digit_confirm(const char *str);
-int				is_space(char c);
-void			dup_check(t_nums *head, int nbr);
 int				ft_isdigitsss(char c);
 void			swap_a(t_nums **nums);
 void			swap_b(t_nums **nums);
@@ -100,5 +103,4 @@ int				first_confirmed_ordered(t_nums *nums);
 int				final_confirmed_ordered(t_nums *nums, t_nums *b);
 void			apply_command(char *str, t_nums **a, t_nums **b);
 int				grab_command(t_nums **a, t_nums **b);
-void			above_int_max(long long nbr);
 #endif

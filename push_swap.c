@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:05 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 23:13:57 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 11:37:51 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int				three_or_five(t_nums **a, t_nums **b, int flag, int argc)
 		
 }
 
-t_nums			*create_a_list(int argc, char **argv) // pass in a
+t_nums			*create_a_list_ps(int argc, char **argv) // pass in a
 {
 	t_nums	*hold_head;
 	t_nums	*head;
@@ -67,12 +67,12 @@ t_nums			*create_a_list(int argc, char **argv) // pass in a
 		temp->next = NULL;
 		hold_head->next = temp;
 		hold_head = hold_head->next;
-		dup_check(head, temp->num); //a must free
+		dup_check_ps(head, temp->num); //a must free
 		i++;
 	}
 	return (head);
 }
-
+/*
 void	print_list(t_nums *nums)
 {
 	while (nums != NULL)
@@ -82,7 +82,7 @@ void	print_list(t_nums *nums)
 		nums = nums->next;
 	}
 }
-
+*/
 int				main(int argc, char **argv)
 {
 	t_nums	*a;
@@ -94,7 +94,7 @@ int				main(int argc, char **argv)
 	flag = 0;
 	a = NULL;
 	flag = (argv[1][0] == '-' && argv[1][1] == 'j') ? 1 : 0;
-	a = create_a_list(argc, argv);
+	a = create_a_list_ps(argc, argv);
 	b = NULL;
 	if (a == NULL || first_confirmed_ordered(a) == 0)
 		return (0);

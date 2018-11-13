@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:23 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 23:09:00 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 11:40:26 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void			above_int_max(long long nbr)
 	}
 }
 
-t_nums			*create_a_list(int argc, char **argv)
+t_nums			*create_a_list_c(int argc, char **argv, t_nums **a)
 {
 	t_nums	*hold_head;
 	t_nums	*head;
@@ -79,7 +79,7 @@ t_nums			*create_a_list(int argc, char **argv)
 		temp->next = NULL;
 		hold_head->next = temp;
 		hold_head = hold_head->next;
-		dup_check(head, temp->num); //a must free
+		dup_check_c(head, temp->num, a); //PROPERLY FREED!
 		i++;
 	}
 	return (head);
@@ -99,7 +99,7 @@ int				main(int argc, char **argv)
 	setbuf(stdout, NULL);
 	if (argc < 2)
 		return (0);
-	a = create_a_list(argc, argv); //a must free
+	a = create_a_list_c(argc, argv, &a); //Passed to a correctly. tested dup
 	b = NULL;
 	if (a == NULL)
 		return (0);
