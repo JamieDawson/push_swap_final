@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:05 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 11:37:51 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 12:50:05 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ t_nums			*create_a_list_ps(int argc, char **argv) // pass in a
 	}
 	return (head);
 }
-/*
-void	print_list(t_nums *nums)
+
+void	print_list_ps(t_nums *nums)
 {
 	while (nums != NULL)
 	{
@@ -82,7 +82,7 @@ void	print_list(t_nums *nums)
 		nums = nums->next;
 	}
 }
-*/
+
 int				main(int argc, char **argv)
 {
 	t_nums	*a;
@@ -94,7 +94,7 @@ int				main(int argc, char **argv)
 	flag = 0;
 	a = NULL;
 	flag = (argv[1][0] == '-' && argv[1][1] == 'j') ? 1 : 0;
-	a = create_a_list_ps(argc, argv);
+	a = create_a_list_ps(argc, argv); //pass in a
 	b = NULL;
 	if (a == NULL || first_confirmed_ordered(a) == 0)
 		return (0);
@@ -107,7 +107,7 @@ int				main(int argc, char **argv)
 	if (final_confirmed_ordered(a, b) == 1)
 		i = my_insert_sort(&a, &b, i);
 	if (flag == 1)
-		print_list(a);
+		print_list_ps(a);
 	free_here(&a); //make a funciton and send free_here to them
 	free_here(&b);
 	return (0);

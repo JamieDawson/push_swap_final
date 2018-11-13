@@ -6,7 +6,7 @@
 #    By: jadawson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/05 18:40:48 by jadawson          #+#    #+#              #
-#    Updated: 2018/11/12 23:06:45 by jadawson         ###   ########.fr        #
+#    Updated: 2018/11/13 12:04:11 by jadawson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ CHECKER_SOURCES = checker.c sa.c sb.c ss.c pa.c pb.c ra.c rb.c rr.c \
 				  rra.c rrb.c rrr.c grab_command.c find_command.c \
 				  first_confirmed_ordered.c final_confirmed_ordered.c \
 				  min_finder.c alg_file.c str_n_file.c free_here.c \
+				  confirming_digits.c
 
 PUSH_SWAP_SOURCES = push_swap.c sa.c sb.c ss.c pa.c pb.c ra.c rb.c \
 					rr.c rra.c rrb.c rrr.c grab_command.c find_command.c \

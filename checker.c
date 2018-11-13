@@ -6,12 +6,14 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:23 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 11:40:26 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 12:46:22 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_header.h"
 
+/*
+//MOVING TO confirming_digits.c
 long long		ft_atoi_digit_confirm(const char *str)
 {
 	long long	i;
@@ -59,6 +61,7 @@ void			above_int_max(long long nbr)
 		exit(1);
 	}
 }
+*/
 
 t_nums			*create_a_list_c(int argc, char **argv, t_nums **a)
 {
@@ -70,12 +73,12 @@ t_nums			*create_a_list_c(int argc, char **argv, t_nums **a)
 	i = 2;
 	head = malloc(sizeof(t_nums));
 	hold_head = head;
-	head->num = ft_atoi_digit_confirm(argv[1]); //a must free
+	head->num = ft_atoi_digit_confirm_c(argv[1], a); //PROPERLY FREED!
 	head->next = NULL;
 	while (i < argc)
 	{
 		temp = malloc(sizeof(t_nums));
-		temp->num = ft_atoi_digit_confirm(argv[i]); // a must free
+		temp->num = ft_atoi_digit_confirm_c(argv[i], a); //PROPERLY FREED!
 		temp->next = NULL;
 		hold_head->next = temp;
 		hold_head = hold_head->next;
@@ -96,7 +99,7 @@ int				main(int argc, char **argv)
 	t_nums	*a;
 	t_nums	*b;
 
-	setbuf(stdout, NULL);
+	setbuf(stdout, NULL);//DELETE WHEN DONE
 	if (argc < 2)
 		return (0);
 	a = create_a_list_c(argc, argv, &a); //Passed to a correctly. tested dup
