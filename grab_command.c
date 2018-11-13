@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:27:08 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 22:49:52 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 23:19:24 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int		grab_command(t_nums **a, t_nums **b)
 		apply_command(line, a, b);
 		free(line);
 	}
-
 	if (*b != NULL)
 	{
 		ft_putstr("\33[31mKO\033[0m\n");

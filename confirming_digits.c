@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/24 20:54:25 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 23:04:36 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 23:22:56 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ long long		ft_atoi_digit_confirm(const char *str)
 	return (nbr * negative);
 }
 
+/*
 void			confirm_digit(int argc, char **argv)
 {
 	int i;
@@ -77,3 +78,4 @@ void			confirm_digit(int argc, char **argv)
 		i++;
 	}
 }
+*/

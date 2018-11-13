@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:05 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 23:05:27 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 23:13:57 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ int				three_or_five(t_nums **a, t_nums **b, int flag, int argc)
 		
 }
 
-
-//handles flag but might fail....
 t_nums			*create_a_list(int argc, char **argv) // pass in a
 {
 	t_nums	*hold_head;
@@ -75,48 +73,16 @@ t_nums			*create_a_list(int argc, char **argv) // pass in a
 	return (head);
 }
 
-
-
-/*
-//works but does not handle flags.
-t_nums			*create_a_list(int argc, char **argv)
-{
-	t_nums	*hold_head;
-	t_nums	*head;
-	t_nums	*temp;
-	int		i;
-
-	i = 2;
-	head = malloc(sizeof(t_nums));
-	hold_head = head;
-	head->num = ft_atoi_digit_confirm(argv[1]);
-	head->next = NULL;
-	while (i < argc)
-	{
-		temp = malloc(sizeof(t_nums));
-		temp->num = ft_atoi_digit_confirm(argv[i]);
-		temp->next = NULL;
-		hold_head->next = temp;
-		hold_head = hold_head->next;
-		dup_check(head, temp->num);
-		i++;
-	}
-	return (head);
-}
-*/
-
 void	print_list(t_nums *nums)
 {
 	while (nums != NULL)
 	{
-		printf("%ld\n", nums->num);
+		ft_putnbr(nums->num);
+		ft_putstr("\n");
 		nums = nums->next;
 	}
 }
 
-
-
-//FLAG HANDLING MAIN GOD DAMNIT
 int				main(int argc, char **argv)
 {
 	t_nums	*a;
@@ -142,7 +108,7 @@ int				main(int argc, char **argv)
 		i = my_insert_sort(&a, &b, i);
 	if (flag == 1)
 		print_list(a);
-	free_here(&a);
+	free_here(&a); //make a funciton and send free_here to them
 	free_here(&b);
 	return (0);
 }
