@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:23 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 22:50:00 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 23:02:56 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,16 @@ t_nums			*create_a_list(int argc, char **argv)
 	i = 2;
 	head = malloc(sizeof(t_nums));
 	hold_head = head;
-	head->num = ft_atoi_digit_confirm(argv[1]);
+	head->num = ft_atoi_digit_confirm(argv[1]); //a must free
 	head->next = NULL;
 	while (i < argc)
 	{
 		temp = malloc(sizeof(t_nums));
-		temp->num = ft_atoi_digit_confirm(argv[i]);
+		temp->num = ft_atoi_digit_confirm(argv[i]); // a must free
 		temp->next = NULL;
 		hold_head->next = temp;
 		hold_head = hold_head->next;
-		dup_check(head, temp->num);
+		dup_check(head, temp->num); //a must free
 		i++;
 	}
 	return (head);
@@ -99,7 +99,7 @@ int				main(int argc, char **argv)
 	setbuf(stdout, NULL);
 	if (argc < 2)
 		return (0);
-	a = create_a_list(argc, argv);
+	a = create_a_list(argc, argv); //a must free
 	b = NULL;
 	if (a == NULL)
 		return (0);

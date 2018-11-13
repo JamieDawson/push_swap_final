@@ -6,30 +6,11 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:05 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 22:37:51 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 23:05:27 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_header.h"
-
-void			above_int_max(long long nbr)
-{
-	long long int i;
-	long long int small;
-
-	i = 1;
-	small = -2147483648;
-	if (nbr > 2147483647)
-	{
-		ft_putstr("\33[31mError\033[0m\n");
-		exit(1);
-	}
-	if (nbr < small)
-	{
-		ft_putstr("\33[31mError\033[0m\n");
-		exit(1);
-	}
-}
 
 int				bulky_list(t_nums **a, t_nums **b, int i, int numbers)
 {
@@ -65,7 +46,7 @@ int				three_or_five(t_nums **a, t_nums **b, int flag, int argc)
 
 
 //handles flag but might fail....
-t_nums			*create_a_list(int argc, char **argv)
+t_nums			*create_a_list(int argc, char **argv) // pass in a
 {
 	t_nums	*hold_head;
 	t_nums	*head;
@@ -77,18 +58,18 @@ t_nums			*create_a_list(int argc, char **argv)
 	head = malloc(sizeof(t_nums));
 	hold_head = head;
 	if (argv[1][0] == '-' && argv[1][1] == 'j')
-		head->num = ft_atoi_digit_confirm(argv[2]);
+		head->num = ft_atoi_digit_confirm(argv[2]); //a must free
 	else
-		head->num = ft_atoi_digit_confirm(argv[1]);
+		head->num = ft_atoi_digit_confirm(argv[1]); //a must free
 	head->next = NULL;
 	while (i < argc)
 	{
 		temp = malloc(sizeof(t_nums));
-		temp->num = ft_atoi_digit_confirm(argv[i]);
+		temp->num = ft_atoi_digit_confirm(argv[i]); //a must free
 		temp->next = NULL;
 		hold_head->next = temp;
 		hold_head = hold_head->next;
-		dup_check(head, temp->num);
+		dup_check(head, temp->num); //a must free
 		i++;
 	}
 	return (head);

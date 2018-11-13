@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:36:53 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 22:50:36 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 23:03:54 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,5 @@ int				first_confirmed_ordered(t_nums *nums);
 int				final_confirmed_ordered(t_nums *nums, t_nums *b);
 void			apply_command(char *str, t_nums **a, t_nums **b);
 int				grab_command(t_nums **a, t_nums **b);
+void			above_int_max(long long nbr);
 #endif

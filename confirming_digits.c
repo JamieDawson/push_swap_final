@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/24 20:54:25 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 20:40:58 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 23:04:36 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,25 @@ void			write_ok(void)
 {
 	ft_putstr("\033[32mOK\033[0m\n");
 	exit(1);
+}
+
+void			above_int_max(long long nbr)
+{
+	long long int i;
+	long long int small;
+
+	i = 1;
+	small = -2147483648;
+	if (nbr > 2147483647)
+	{
+		ft_putstr("\33[31mError\033[0m\n");
+		exit(1);
+	}
+	if (nbr < small)
+	{
+		ft_putstr("\33[31mError\033[0m\n");
+		exit(1);
+	}
 }
 
 long long		ft_atoi_digit_confirm(const char *str)
