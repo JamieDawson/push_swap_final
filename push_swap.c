@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:05 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 21:54:08 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 21:59:52 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ int				bulky_list(t_nums **a, t_nums **b, int i, int numbers)
 
 int				three_or_five(t_nums **a, t_nums **b, int flag, int argc)
 {
-/*	if (fake == 4)
-		i += sort_three(a);
-	if (fake == 6)
-		i += sort_five(a, b, i);
-	return (i)
-*/		
-		
 	int i;
 
 	i = 0;
@@ -159,10 +152,7 @@ int				main(int argc, char **argv)
 	if (a == NULL || first_confirmed_ordered(a) == 0)
 		return (0);
 	if (argc >= 4 && argc <= 7)
-	{
 		i += three_or_five(&a, &b, flag, argc);
-	//	return (0);
-	}
 	if (argc >= 8 && argc <= 800)
 		i += bulky_list(&a, &b, i, argc);
 	if (argc >= 801)
