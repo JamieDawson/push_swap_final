@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:05 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/12 21:59:52 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:37:51 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,5 +161,7 @@ int				main(int argc, char **argv)
 		i = my_insert_sort(&a, &b, i);
 	if (flag == 1)
 		print_list(a);
+	free_here(&a);
+	free_here(&b);
 	return (0);
 }

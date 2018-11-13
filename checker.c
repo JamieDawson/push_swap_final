@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 20:11:23 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/01 20:16:16 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:38:51 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,7 @@ int				main(int argc, char **argv)
 	if (a == NULL)
 		return (0);
 	grab_command(&a, &b);
+	free_here(&a);
+	free_here(&b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: jadawson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/05 18:40:48 by jadawson          #+#    #+#              #
-#    Updated: 2018/11/06 16:16:44 by jadawson         ###   ########.fr        #
+#    Updated: 2018/11/12 22:38:04 by jadawson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ GNL_C = gnl/get_next_line.c
 CHECKER_SOURCES = checker.c sa.c sb.c ss.c pa.c pb.c ra.c rb.c rr.c \
 				  rra.c rrb.c rrr.c grab_command.c find_command.c \
 				  first_confirmed_ordered.c final_confirmed_ordered.c \
-				  min_finder.c alg_file.c str_n_file.c
+				  min_finder.c alg_file.c str_n_file.c free_here.c
 
 PUSH_SWAP_SOURCES = push_swap.c sa.c sb.c ss.c pa.c pb.c ra.c rb.c \
 					rr.c rra.c rrb.c rrr.c grab_command.c find_command.c \
@@ -40,7 +40,8 @@ PUSH_SWAP_SOURCES = push_swap.c sa.c sb.c ss.c pa.c pb.c ra.c rb.c \
 					is_b_ordered.c smallest_finder.c \
 				  	biggest_finder.c tot_b.c send_entire_b_to_a.c \
 					b_helper_functs.c helper_ra_rra.c sort_five.c \
-					str_n_file.c bulky_med.c bulky_large.c jumbo_list.c
+					str_n_file.c bulky_med.c bulky_large.c jumbo_list.c \
+					free_here.c
 
 all: $(CHECKER_NAME)
 

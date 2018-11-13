@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:36:53 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/06 16:05:19 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:35:40 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct	s_nums{
 	struct s_nums	*next;
 }				t_nums;
 
+void			free_here(t_nums **all);
 int				before_push_b(t_nums **a, t_nums **b);
 void			print_list(t_nums *nums);
 int				sort_five(t_nums **a, t_nums **b, int i);
