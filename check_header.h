@@ -6,7 +6,7 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/24 14:36:53 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 14:24:51 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 16:50:35 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ typedef struct	s_nums{
 	struct s_nums	*next;
 }				t_nums;
 
-
-void			above_int_max(long long nbr, t_nums **a);//free a here
-long long		ft_atoi_digit_confirm(const char *str, t_nums **a);//free a
-void			above_int_max_c(long long nbr, t_nums **a);//DONE
-long long		ft_atoi_digit_confirm_c(const char *str, t_nums **a);//DONE
+void			free_a_and_b(t_nums **a, t_nums **b);
+void			above_int_max(long long nbr, t_nums **a);
+long long		ft_atoi_digit_confirm(const char *str, t_nums **a);
+void			above_int_max_c(long long nbr, t_nums **a);
+long long		ft_atoi_digit_confirm_c(const char *str, t_nums **a);
 int				is_space(char c);
-void			dup_check_ps(t_nums *head, int nbr, t_nums **a);//DONE
-void			dup_check_c(t_nums *head, int nbr, t_nums **a);//DONE
-t_nums			*create_a_list_ps(int argc, char **argv, t_nums **a);//max aboe
-t_nums			*create_a_list_c(int argc, char **argv, t_nums **a);//DONE
+void			dup_check_ps(t_nums *head, int nbr, t_nums **a);
+void			dup_check_c(t_nums *head, int nbr, t_nums **a);
+t_nums			*create_a_list_ps(int argc, char **argv, t_nums **a);
+t_nums			*create_a_list_c(int argc, char **argv, t_nums **a);
 void			confirm_digit(int argc, char **argv);
 void			free_here(t_nums **all);
 int				before_push_b(t_nums **a, t_nums **b);
@@ -84,7 +84,6 @@ int				sort_three_sa_and_write(t_nums **a);
 int				sort_three_ra_and_write(t_nums **a);
 int				sort_three_rra_and_write(t_nums **a);
 int				sort_three(t_nums **a);
-void			write_ok(void);
 int				min_finder(t_nums *a, int min);
 int				my_insert_sort(t_nums **a, t_nums **b, int i);
 int				ft_isdigitsss(char c);

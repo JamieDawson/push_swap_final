@@ -6,31 +6,20 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/24 20:54:25 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 14:24:54 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 16:53:52 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_header.h"
 
-void			write_ok(void)
+void			exit_not_a_num(t_nums **a)
 {
-	ft_putstr("\033[32mOK\033[0m\n");
+	ft_putstr("\033[31mError\033[0m\n");
+	free_here(a);
 	exit(1);
 }
 
-//TESTING DELETE LATER!
-void	print_list(t_nums *nums)
-{
-	while (nums != NULL)
-	{
-		ft_putnbr(nums->num);
-		ft_putstr("\n");
-		nums = nums->next;
-	}
-}
-
-
-void			above_int_max_c(long long nbr, t_nums **a)//DONE
+void			above_int_max_c(long long nbr, t_nums **a)
 {
 	long long int i;
 	long long int small;
@@ -51,7 +40,7 @@ void			above_int_max_c(long long nbr, t_nums **a)//DONE
 	}
 }
 
-long long		ft_atoi_digit_confirm_c(const char *str, t_nums **a)//DONE
+long long		ft_atoi_digit_confirm_c(const char *str, t_nums **a)
 {
 	long long	i;
 	long long	nbr;
@@ -72,16 +61,12 @@ long long		ft_atoi_digit_confirm_c(const char *str, t_nums **a)//DONE
 		i++;
 	}
 	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
-	{
-		ft_putstr("\033[31mError\033[0m\n");
-		free_here(a);
-		exit(1);
-	}
+		exit_not_a_num(a);
 	above_int_max_c(nbr * negative, a);
 	return (nbr * negative);
 }
 
-void			above_int_max(long long nbr, t_nums **a) //HANDLE FOR PS
+void			above_int_max(long long nbr, t_nums **a)
 {
 	long long int i;
 	long long int small;
@@ -102,7 +87,7 @@ void			above_int_max(long long nbr, t_nums **a) //HANDLE FOR PS
 	}
 }
 
-long long		ft_atoi_digit_confirm(const char *str, t_nums **a) //HANDLE FOR PS
+long long		ft_atoi_digit_confirm(const char *str, t_nums **a)
 {
 	long long	i;
 	long long	nbr;
@@ -123,25 +108,7 @@ long long		ft_atoi_digit_confirm(const char *str, t_nums **a) //HANDLE FOR PS
 		i++;
 	}
 	if (str[i] != '\0' && !(str[i] >= '0' && str[i] <= '9'))
-	{
-		ft_putstr("\033[31mError\033[0m\n");
-		free_here(a);
-		exit(1);
-	}
+		exit_not_a_num(a);
 	above_int_max(nbr * negative, a);
 	return (nbr * negative);
 }
-
-/*
-void			confirm_digit(int argc, char **argv)
-{
-	int i;
-
-	i = 1;
-	while (i < argc)
-	{
-		ft_atoi_digit_confirm(argv[i]);
-		i++;
-	}
-}
-*/

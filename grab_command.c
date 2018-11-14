@@ -6,24 +6,11 @@
 /*   By: jadawson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:27:08 by jadawson          #+#    #+#             */
-/*   Updated: 2018/11/13 14:25:03 by jadawson         ###   ########.fr       */
+/*   Updated: 2018/11/13 14:28:35 by jadawson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_header.h"
-
-/*
-//TESTING REMOVE LATER!
-void	print_list(t_nums *nums)
-{
-	while (nums != NULL)
-	{
-		ft_putnbr(nums->num);
-		ft_putstr("\n");
-		nums = nums->next;
-	}
-}
-*/
 
 void	dup_check_ps(t_nums *head, int nbr, t_nums **a)
 {
